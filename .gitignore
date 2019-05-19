@@ -25,3 +25,16 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore .env login details for admin view
+/.env
+
+# Ignore redis binary dump (dump.rdb) files
+*.rdb
+/dump.rdb
+
+# Ignore auto Mac generated DS file
+*.DS_Store
+
+# Gemfile lock ignore
+*lock
