@@ -1,0 +1,3 @@
+class Cupboard < ApplicationRecord
+
+end

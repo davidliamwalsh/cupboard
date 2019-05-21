@@ -1,24 +1,77 @@
-# README
+model
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+cupboard
+has_many :assets
 
-Things you may want to cover:
 
-* Ruby version
+assets
+belongs_to cupboard
 
-* System dependencies
+=====================
 
-* Configuration
+view
 
-* Database creation
+admin
 
-* Database initialization
+static
+  index modal with button link
 
-* How to run the test suite
+======================
 
-* Services (job queues, cache servers, search engines, etc.)
+controller
 
-* Deployment instructions
+admin
+  cupboard
+    index
+    new
+    create
+    edit
+    update
+    destroy
+    cupboard_params = params.require(:cupboard).permit(:title)
 
-* ...
+  asset
+    index
+    new
+    create
+    edit
+    update
+    destroy
+
+panel
+  index
+
+static
+  index
+=======================
+
+routes
+
+static
+
+:admin do
+  resources cupboard
+  resources assets
+
+=======================
+
+db
+
+
+
+assets
+  string title, null: false
+  string sku, null: false
+  belongs_to :cupboard, foreign_key: true
+  datetime created, null: false
+
+
+========================
+
+spec
+
+==========================
+
+
+
+
