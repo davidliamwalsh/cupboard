@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     root 'panel#index'
-    resources :cupboard
+    resources :cupboards
   end
 
 end
