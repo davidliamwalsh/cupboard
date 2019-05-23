@@ -1,0 +1,52 @@
+.c-modal {
+  margin: 0 auto;
+  width: 70%;
+  background-color: $modal-background;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+    h1 {
+      padding: 1.5em;
+      color: $header;
+    }
+  }
+
+  &__login {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+
+     &--button {
+      padding: 1em 1.5em;
+      background: $idle-button;
+      border-radius: 10px;
+      font-size: 1em;
+      color: $idle-login;
+      margin: 2em;
+
+      &:hover {
+        background: $active-button;
+        cursor: pointer;
+      }
+      &:focus {
+        outline: none;
+      }
+     }
+  }
+}
+
+@media screen and (min-width: $tablet-break) {
+
+}
+
+@media screen and (min-width: $desktop-break) {
+
+}
