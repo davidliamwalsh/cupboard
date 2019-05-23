@@ -1,13 +1,14 @@
 <h1>Cupboards</h1>
 <h5>Create a<%= link_to "new", new_admin_cupboard_path, class: "px-2" %>cupboard</h5>
 
+<%= paginate @cupboards, theme: 'twitter-bootstrap-4' %>
 <table class="table table-sm table-border">
   <% @cupboards.each do |cupboard| %>
     <tr>
-      <td><%= cupboard.title %></td>
+      <td><h5 class="pt-2"><%= cupboard.title %></h5></td>
       <td><%= link_to "edit", edit_admin_cupboard_path(cupboard), class: "btn btn-primary" %></td>
       <td><%= link_to "show", admin_cupboard_path(cupboard), class: "btn btn-primary" %></td>
-      <td><%= link_to "delete", class: "btn btn-primary" %></td>
     </tr>
   <% end %>
 </table>
+<%= paginate @cupboards, theme: 'twitter-bootstrap-4' %>

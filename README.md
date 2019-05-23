@@ -47,7 +47,7 @@ static
 
 routes
 
-static
+root static
 
 :admin do
   resources cupboard

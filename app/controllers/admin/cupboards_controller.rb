@@ -1,11 +1,11 @@
 class Admin::CupboardsController < Admin::ApplicationController
 
   def index
-    @cupboards = Cupboard.all
+    @cupboards = Cupboard.order("created_at").page(params[:page]).per(2)
   end
 
   def show
-    @cupboard = Cupboard.find(cupboard_params)
+    @cupboard = Cupboard.find(params[:id])
   end
 
   def new
@@ -38,6 +38,11 @@ class Admin::CupboardsController < Admin::ApplicationController
   end
 
   def destroy
+    @cupboard = Cupboard.find(params[:id])
+
+    @cupboard.destroy
+
+    redirect_to admin_cupboards_path, notice: "Cupboard deleted successfully!"
   end
 
   private

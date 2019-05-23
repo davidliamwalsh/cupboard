@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_21_084551) do
+ActiveRecord::Schema.define(version: 2019_05_23_170354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "assets", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "sku", null: false
+    t.bigint "cupboard_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cupboard_id"], name: "index_assets_on_cupboard_id"
+  end
 
   create_table "cupboards", force: :cascade do |t|
     t.string "title", null: false
@@ -21,4 +30,5 @@ ActiveRecord::Schema.define(version: 2019_05_21_084551) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "assets", "cupboards"
 end
