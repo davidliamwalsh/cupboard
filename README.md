@@ -1,8 +1,11 @@
 model
 
-cupboard has_many :assets
+cupboard
+has_many :assets
 
-assets belongs_to cupboard
+
+assets
+belongs_to cupboard
 
 =====================
 
@@ -10,30 +13,60 @@ view
 
 admin
 
-static index modal with button link
+static
+  index modal with button link
 
 ======================
 
 controller
 
-admin cupboard index new create edit update destroy cupboard_params = params.require(:cupboard).permit(:title)
+admin
+  cupboard
+    index
+    new
+    create
+    edit
+    update
+    destroy
+    cupboard_params = params.require(:cupboard).permit(:title)
 
-asset index new create edit update destroy
+  asset
+    index
+    new
+    create
+    edit
+    update
+    destroy
 
-panel index
+panel
+  index
 
-static index
+static
+  index
+=======================
+
 routes
 
 static
 
-:admin do resources cupboard resources assets
+:admin do
+  resources cupboard
+  resources assets
 
 =======================
 
-db string title, null: false has_many :assets datetime created, null: false
+db
+string title, null: false
+has_many :assets
+datetime created, null: false
 
-assets string title, null: false string sku, null: false belongs_to :cupboard, foreign_key: true datetime created, null: false
+
+assets
+  string title, null: false
+  string sku, null: false
+  belongs_to :cupboard, foreign_key: true
+  datetime created, null: false
+
 
 ========================
 

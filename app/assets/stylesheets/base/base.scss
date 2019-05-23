@@ -1,0 +1,13 @@
+* {
+  list-style: none;
+  word-spacing: .2em;
+  box-shadow: none;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Libre Franklin', sans-serif;
+  height: 100%;
+  background-color: $body-background;
+}
