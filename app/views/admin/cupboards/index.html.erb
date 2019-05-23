@@ -1,7 +1,13 @@
+<h1>Cupboards</h1>
+<h5>Create a<%= link_to "new", new_admin_cupboard_path, class: "px-2" %>cupboard</h5>
+
 <table class="table table-sm table-border">
   <% @cupboards.each do |cupboard| %>
     <tr>
       <td><%= cupboard.title %></td>
+      <td><%= link_to "edit", edit_admin_cupboard_path(cupboard), class: "btn btn-primary" %></td>
+      <td><%= link_to "show", admin_cupboard_path(cupboard), class: "btn btn-primary" %></td>
+      <td><%= link_to "delete", class: "btn btn-primary" %></td>
     </tr>
   <% end %>
 </table>

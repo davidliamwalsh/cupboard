@@ -56,7 +56,9 @@ static
 =======================
 
 db
-
+string title, null: false
+has_many :assets
+datetime created, null: false
 
 
 assets

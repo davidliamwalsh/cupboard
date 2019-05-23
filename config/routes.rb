@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'panel#index'
     resources :cupboards
+    resources :assets
   end
 
 end
