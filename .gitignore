@@ -34,7 +34,7 @@
 /dump.rdb
 
 # Ignore auto Mac generated DS file
-*.DS_Store
+.DS_Store
 
 # Gemfile lock ignore
 *lock
