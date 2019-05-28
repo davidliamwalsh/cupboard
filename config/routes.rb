@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   root 'static#index'
-  
+
   namespace :admin do
     root 'panel#index'
     devise_for :users, :module => "devise"

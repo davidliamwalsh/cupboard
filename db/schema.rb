@@ -10,17 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_05_21_084551) do
-=======
 ActiveRecord::Schema.define(version: 2019_05_27_190254) do
->>>>>>> develop
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
-=======
   create_table "assets", force: :cascade do |t|
     t.string "title", null: false
     t.string "sku", null: false
@@ -30,15 +24,12 @@ ActiveRecord::Schema.define(version: 2019_05_27_190254) do
     t.index ["cupboard_id"], name: "index_assets_on_cupboard_id"
   end
 
->>>>>>> develop
   create_table "cupboards", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,5 +53,4 @@ ActiveRecord::Schema.define(version: 2019_05_27_190254) do
   end
 
   add_foreign_key "assets", "cupboards"
->>>>>>> develop
 end
