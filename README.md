@@ -74,6 +74,8 @@ spec
 
 ==========================
 
+introduce papertrail with users and assets
+
 
 
 
