@@ -1,4 +1,5 @@
 class Admin::CupboardsController < Admin::ApplicationController
+before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @cupboards = Cupboard.order("created_at").page(params[:page]).per(2)
@@ -6,6 +7,9 @@ class Admin::CupboardsController < Admin::ApplicationController
 
   def show
     @cupboard = Cupboard.find(params[:id])
+
+    @asset = Asset.new
+    @asset.cupboard_id = @cupboard.id
   end
 
   def new
@@ -16,7 +20,7 @@ class Admin::CupboardsController < Admin::ApplicationController
     @cupboard = Cupboard.new(cupboard_params)
 
     if @cupboard.save
-      redirect_to admin_cupboards_path, notice: "Cupboard created successfully!"
+      redirect_to admin_cupboards_path
     else
       render :new
     end
@@ -31,7 +35,7 @@ class Admin::CupboardsController < Admin::ApplicationController
     @cupboard.attributes = cupboard_params
 
     if @cupboard.save
-      redirect_to admin_cupboards_path, notice: "Cupboard updated successfully!"
+      redirect_to admin_cupboards_path
     else
       render :edit
     end
@@ -42,9 +46,9 @@ class Admin::CupboardsController < Admin::ApplicationController
 
     @cupboard.destroy
 
-    redirect_to admin_cupboards_path, notice: "Cupboard deleted successfully!"
+    redirect_to admin_cupboards_path
   end
-
+  
   private
 
   def cupboard_params

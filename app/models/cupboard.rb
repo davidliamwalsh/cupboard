@@ -1,4 +1,4 @@
 class Cupboard < ApplicationRecord
-  validates :title, presence: true
   has_many :assets
+  validates :title, presence: true
 end
