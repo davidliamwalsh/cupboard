@@ -1,5 +1,64 @@
 @import "bootstrap";
 
+// default settings
+
+.section {
+  margin-bottom: 1.5em;
+}
+
 .container {
   padding-top: 2em;
+}
+
+.form-control:focus{
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.navbar {
+  a {
+    color: #E5D9C1;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+
+// font styling
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+// main container custom admin panel
+
+.flash {
+  background: #E05050;
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #E5D9C1;
+}
+
+.container {
+  margin-top: 2em;
+  
+  hr {
+    width: 4em;
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 4px solid #343A40;
+    margin: .5em 0;
+  }
+
+  .table {
+    border-color: none; 
+  }
 }

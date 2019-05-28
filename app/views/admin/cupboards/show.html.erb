@@ -1,1 +1,21 @@
-<h1>show</h1>
+<div class="section">
+  <h1><%= @cupboard.title %></h1>
+  <h2>Created on <%= @cupboard.created_at.strftime("%A, %b, %d") %></h2>
+  <%= link_to "Back", admin_cupboards_path, class: "btn btn-primary" %>
+  <%= link_to "delete", admin_cupboard_path(@cupboard), 
+      method: :delete, 
+      data: {confirm: "Are you sure you wish to delete the cupboard?"},
+      class: "btn btn-primary" %>
+</div>
+
+<h4>This cupboard contains <%= @cupboard.assets.count %> Assets</h4>
+
+<div class="section">
+  <%= render partial: 'admin/assets/asset', collection: @cupboard.assets %>
+</div>
+
+<div class="section">
+  <h4>Create a new asset</h4>
+  <hr>
+  <%= render 'admin/assets/form' %>
+</div>

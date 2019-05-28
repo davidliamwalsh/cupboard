@@ -40,6 +40,8 @@ gem 'paper_trail', '~> 10.3'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'bootstrap', '~> 4.0'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'bootstrap4-kaminari-views', '~> 1.0', '>= 1.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
