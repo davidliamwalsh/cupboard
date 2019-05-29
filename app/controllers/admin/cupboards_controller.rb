@@ -1,5 +1,5 @@
 class Admin::CupboardsController < Admin::ApplicationController
-before_action :authenticate_user!, except: [:show, :index]
+
 
   def index
     @cupboards = Cupboard.order("created_at").page(params[:page]).per(2)
